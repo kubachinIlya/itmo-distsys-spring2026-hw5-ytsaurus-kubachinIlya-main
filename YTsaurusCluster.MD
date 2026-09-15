@@ -34,7 +34,7 @@ sudo docker run hello-world
 ```
 
 ##  kubectl, kind, helm
-Три утилиты, каждая для своего.
+Просто по инструкциям
 
 ```bash
 # kubectl — рулим k8s-кластером
@@ -68,9 +68,7 @@ kubectl get pods -A
 YTsaurus оператор
 ```bash
 helm install ytsaurus oci://ghcr.io/ytsaurus/ytop-chart --version 0.31.0
-```
-Вторая попытка установки упадёт с cannot reuse a name that is still in use —
-это нормально, значит первый раз всё уже прошло. Смотри helm list.
+``` 
 
 Проверка:
 
@@ -95,7 +93,7 @@ nohup kubectl port-forward --address 0.0.0.0 service/http-proxies-lb 8081:80 > /
 nohup kubectl port-forward --address 0.0.0.0 pod/rp-0 8082:9013 > /tmp/pf-rpc.log 2>&1 &
 ```
 Про & в конце — однажды забыл, и терминал просто завис.
- & = запусти в фоне
+& - для запуска на фоне
 
 RPC-прокси в моей сборке чарта назывался не rpc-proxies-lb, а просто под rp-0.
 Пришлось пробрасывать к поду напрямую. Проверить реальные порты можно через:
@@ -144,7 +142,7 @@ source ~/.bashrc
 yt whoami   # должно вернуть admin
 ```
 Скриншоты тут [`Моя виртуальная машина в клауде`](./images_text_src/Виртуальная_машина_в_клауде.png) 
-  и [`YTsaurus по адресу моей виртуальной машины`](./images_text_src/Открыл свой YTsaurus.png)
+и [`YTsaurus по адресу моей виртуальной машины`](./images_text_src/Мой_YTsaurus.png)
  
 
 Создание директории  
